@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Fri May 08 2020 12:27:14 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/Components/counter.jsx
+* src/index.js
+
+
+Created files:
+* .autogit/autogit.json
+* src/Components/counters.jsx
+
+
+Deleted files:
+
+
+Renamed files:
