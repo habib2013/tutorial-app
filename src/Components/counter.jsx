@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 class Counter extends Component {
    state = { 
-      count : 5,
-      tags:['tag1','tag2','tag3']
+      value : this.props.value,
+    
     };
 // handleIncrement(){
 //    console.log("Increment Clicked")
@@ -10,7 +10,7 @@ class Counter extends Component {
 myBtnIncrement = product => {
    // console.log("Increment Clicked",this);
    console.log(product)
-   this.setState({count: this.state.count + 1});
+   this.setState({count: this.state.value + 1});
 } 
 
 dohandleIncrement =() => {
@@ -18,24 +18,15 @@ dohandleIncrement =() => {
 }
 
 
-
-    renderTags(){
-       if(this.state.tags.length === 0) return <p>There are no Tags</p>;
-       return <ul> 
-       {this.state.tags.map(tag => 
-          <li key={tag}>{ tag }</li>
-       )}
-      </ul>
-    }
    render() { 
-    
+
       return ( 
          <div>
+      
          <p className={this.getBadgeClasses()}>  {this.myIncrement()}</p> 
          <button onClick={() => this.myBtnIncrement({id:1})} className="btn btn-primary">Increment</button>
         
-        {this.state.tags.length === 0 && 'Please Create a new Tag'}
-        {this.renderTags()}
+   
          </div>
        );
    }
@@ -44,12 +35,12 @@ dohandleIncrement =() => {
 
    getBadgeClasses() {
       let classes = "badge m-2 badge-";
-      classes += (this.state.count === 0) ? 'danger' : 'primary';
+      classes += (this.state.value === 0) ? 'danger' : 'primary';
       return classes;
    }
 
    myIncrement(){
-      const {count} =  this.state;
+      const {value: count} =  this.state;
       return count === 0 ? <h1>Zero</h1> : count; 
    }
 }
