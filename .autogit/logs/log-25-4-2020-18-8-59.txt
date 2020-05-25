@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Mon May 25 2020 18:08:59 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/App.js
+* src/Components/counters.jsx
+* src/index.js
+
+
+Created files:
+* .autogit/logs/log-25-4-2020-16-2-49.txt
+* src/Components/navbar.jsx
+
+
+Deleted files:
+
+
+Renamed files:
