@@ -11,11 +11,18 @@ class Counters extends Component {
       ]
    }
 handleIncrement = counter => {
-   const counters = [...this.state.counters];
-   const index = counters.indexOf(counter);
-   counters[index] = {...counter};
-   counters[index].value++;
-   this.setState({counters});
+const counters = [...this.state.counters];
+const index = counters.indexOf(counter);
+ counters[index] = {...counter};
+ counters[index].value++;
+ this.setState({counters});
+
+    // const counters = [...this.state.counters];
+   // const index = counters.indexOf(counter);
+   // counters[index] = {...counter};
+   // counters[index].value++;
+   // this.setState({counters});
+
 }
 
 handleDelete = (counterId) => {

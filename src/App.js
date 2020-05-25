@@ -1,54 +1,21 @@
-import React from 'react';
+import React,{Component} from 'react';
 import './App.css';
-import { getMovies } from "./services/fakeMovieService";
+// import { getMovies } from "./services/fakeMovieService";
+import NavBar from "./Components/navbar";
+import Counters from './Components/counters';
 
-function App() {
-
-  let myMovie = getMovies();
-
-  const handleDelete = (movie) => {
-    console.log(movie);
-
-  } 
-
-const myRenderer = () => {
-  return (myMovie.length === 0) ? 'No Movie' : myMovie.length + " Available";
-}
-  return (
+class App extends Component {
+  state = {  }
+  render() { 
+    return (
+      <React.Fragment>
+<NavBar/>
 <main className="container">
-
-<h1>{myRenderer()}</h1>
-
-<table className="table">
- <thead>
-<th>title</th>
-<th>Genre</th>
-<th>Stock</th>
-<th>Rate</th>
-<th></th>
- </thead>
- <tbody>
-
-{myMovie.map(movie => 
-  <tr key={movie._id}> 
-    <td>{movie.title}</td>
-    <td>{movie.genre.name}</td>
-    <td>{movie.numberInStock}</td>
-    <td>{movie.dailyRentalRate}</td>
-    <td className="btn btn-danger" onClick={() => handleDelete(movie)}> DELETE</td>
-  </tr>
-  
-  )} 
-   <td>
-
- 
-   </td>
- </tbody>
-
-</table>
-
+<Counters/>  
 </main>
-  );
+</React.Fragment>
+      );
+  }
 }
-
+ 
 export default App;
