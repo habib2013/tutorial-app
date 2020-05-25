@@ -1,0 +1,17 @@
+-------------------- Auto-Git Log --------------------
+		Mon May 25 2020 15:52:44 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/Components/counter.jsx
+* src/Components/counters.jsx
+
+
+Created files:
+* .autogit/logs/log-11-4-2020-10-27-57.txt
+
+
+Deleted files:
+
+
+Renamed files:
