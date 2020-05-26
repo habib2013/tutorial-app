@@ -12,7 +12,9 @@ dohandleIncrement =() => {
          <div>
       
          <p className={this.getBadgeClasses()}>  {this.myIncrement()}</p> 
-         <button onClick={() => this.props.onIncrement(this.props.counter)} className="btn btn-primary">Increment</button>
+         <button onClick={() => this.props.onIncrement(this.props.counter)} className="btn btn-primary">+</button>
+         <button onClick={() => this.props.onDecrement(this.props.counter)} className="btn btn-warning" disabled={(this.props.counter.value === 0) ? 'disabled': ''} >-</button>
+        
         <button onClick={() => this.props.onDelete(this.props.counter.id)} className="btn btn-danger btn-sm m-2"> <i className="fa fa-trash"></i></button>
    
          </div>
@@ -26,6 +28,14 @@ dohandleIncrement =() => {
       classes += (this.props.counter.value === 0) ? 'danger' : 'primary';
       return classes;
    }
+
+   // getStatus(){
+   //    const {value} = this.props.counter;
+   //    console.log(value);
+   //     let status = "btn btn-warning";
+   //     status += (value.lenght > 0) ? '' : ' disabled';
+   //     return value;
+   // }
 
    myIncrement(){
       const {value: count} =  this.props.counter;

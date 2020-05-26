@@ -1,0 +1,16 @@
+-------------------- Auto-Git Log --------------------
+		Mon May 25 2020 18:39:16 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/Components/navbar.jsx
+
+
+Created files:
+* .autogit/logs/log-25-4-2020-18-19-5.txt
+
+
+Deleted files:
+
+
+Renamed files:
