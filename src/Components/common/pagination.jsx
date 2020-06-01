@@ -27,7 +27,10 @@ if(pagesCount === 1) return null;
 }
  
 Pagination.propTypes =  {
-   itemsCount:PropTypes.number,pageSize,onPageChange,currentPage
+   itemsCount:PropTypes.number.isRequired,
+   pageSize:PropTypes.number.isRequired,
+   onPageChange:PropTypes.number.isRequired,
+   currentPage:PropTypes.func.isRequired
 
 };
 export default Pagination;

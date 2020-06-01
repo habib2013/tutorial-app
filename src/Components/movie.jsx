@@ -1,16 +1,24 @@
 import React, { Component } from 'react';
 import { getMovies } from '../services/fakeMovieService';
+import { getGenres } from "../services/fakeGenreService";
 import  Like  from "./common/like";
+import  ListGroup  from "./common/listGroup";
 import Pagination from './common/pagination';
 import {paginate} from '../utils/paginate';
 
+
 class Movie extends Component {
    state = { 
-      movies:getMovies(),
+      movies:[],
+      genres:[],
       pageSize:4,
       currentPage:1
 
     };
+
+    componentDidMount(){
+      this.setState({movies:getMovies(),genres:getGenres()})
+    }
 
 deleteMovie = (movie) => {
    const movies = this.state.movies.filter(m => m._id !== movie._id);
@@ -30,21 +38,34 @@ handleLike = (movie) => {
  const movies = [...this.state.movies]; //get the array
   const index =  movies.indexOf(movie); // get index from movie passed
 movies[index] = {...movies[index]}; // copy the indexed array in an object
-movies[index].liked = !movies[index].liked; //toggle between like dislike
+movies[index].liked = !movies[index].liked; //toggle between like/dislike
   this.setState({movies}); // change state
 }
 
+handleGenreSelect = genre => {
+  this.setState({selectedGenre : genre});
+}
   
 
    render() { 
 const {length:count} = this.state.movies;
 const {pageSize,currentPage,movies:allMovies} = this.state;
-
 const movies = paginate(allMovies,currentPage,pageSize);
 
       return ( 
    
-<div>
+<div className="container row pt-4 ml-3 mr-4 justify-content-center">
+<div className="col-3">
+<ListGroup
+ items={this.state.genres}
+ selectedItem = {this.state.selectedGenre}
+onItemSelect={this.handleGenreSelect}
+
+/>
+
+</div>
+<div className="col">
+
 <h3>{this.handleLenght()}</h3>
 <table className="container table">
    <tr>
@@ -76,6 +97,9 @@ const movies = paginate(allMovies,currentPage,pageSize);
  onPageChange={this.handlePageChange}
  currentPage = {currentPage}
  />
+
+</div>
+
 </div>
        );
    }
