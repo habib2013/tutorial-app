@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { getMovies } from '../services/fakeMovieService';
 import  Like  from "./common/like";
+import Pagination from './common/pagination';
 
 class Movie extends Component {
    state = { 
@@ -18,11 +19,11 @@ handleLenght = () => {
 }
 
 handleLike = (movie) => {
- const movies = [...this.state.movies];
-  const index =  movies.indexOf(movie);
-movies[index] = {...movies[index]};
-movies[index].liked = !movies[index].liked;
-  this.setState({movies}); 
+ const movies = [...this.state.movies]; //get the array
+  const index =  movies.indexOf(movie); // get index from movie passed
+movies[index] = {...movies[index]}; // copy the indexed array in an object
+movies[index].liked = !movies[index].liked; //toggle between like dislike
+  this.setState({movies}); // change state
 }
 
     
@@ -56,7 +57,7 @@ movies[index].liked = !movies[index].liked;
          )}
    </tbody>
 </table>
-
+<Pagination/>
 </div>
        );
    }
