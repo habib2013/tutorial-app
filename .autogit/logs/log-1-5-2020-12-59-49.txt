@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Mon Jun 01 2020 12:59:49 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/Components/common/pagination.jsx
+* src/Components/movie.jsx
+
+
+Created files:
+* .autogit/logs/log-1-5-2020-9-43-37.txt
+* src/Components/common/listGroup.jsx
+
+
+Deleted files:
+
+
+Renamed files:
