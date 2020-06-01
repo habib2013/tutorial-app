@@ -2,11 +2,13 @@ import React, { Component } from 'react';
 import { getMovies } from '../services/fakeMovieService';
 import  Like  from "./common/like";
 import Pagination from './common/pagination';
+import {paginate} from '../utils/paginate';
 
 class Movie extends Component {
    state = { 
       movies:getMovies(),
       pageSize:4,
+      currentPage:1
 
     };
 
@@ -21,7 +23,7 @@ handleLenght = () => {
 }
 
 handlePageChange = page => {
-console.log(page);
+this.setState({currentPage : page});
 }
 
 handleLike = (movie) => {
@@ -36,6 +38,10 @@ movies[index].liked = !movies[index].liked; //toggle between like dislike
 
    render() { 
 const {length:count} = this.state.movies;
+const {pageSize,currentPage,movies:allMovies} = this.state;
+
+const movies = paginate(allMovies,currentPage,pageSize);
+
       return ( 
    
 <div>
@@ -51,7 +57,7 @@ const {length:count} = this.state.movies;
    </tr>
    <tbody>
     
-         {this.state.movies.map(item => 
+         {movies.map(item => 
       <tr key={item._id}>
   <td >{item.title}</td>
          <td >{item.genre.name}</td>
@@ -65,7 +71,11 @@ const {length:count} = this.state.movies;
          )}
    </tbody>
 </table>
-<Pagination itemsCount={count} pageSize={10} onPageChange={this.handlePageChange}/>
+<Pagination itemsCount={count}
+ pageSize={pageSize} 
+ onPageChange={this.handlePageChange}
+ currentPage = {currentPage}
+ />
 </div>
        );
    }

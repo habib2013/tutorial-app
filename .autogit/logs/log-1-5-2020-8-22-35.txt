@@ -1,0 +1,19 @@
+-------------------- Auto-Git Log --------------------
+		Mon Jun 01 2020 08:22:35 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* package-lock.json
+* package.json
+* src/Components/common/pagination.jsx
+* src/Components/movie.jsx
+
+
+Created files:
+* .autogit/logs/log-1-5-2020-8-12-33.txt
+
+
+Deleted files:
+
+
+Renamed files:
