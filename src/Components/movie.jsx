@@ -6,6 +6,8 @@ import Pagination from './common/pagination';
 class Movie extends Component {
    state = { 
       movies:getMovies(),
+      pageSize:4,
+
     };
 
 deleteMovie = (movie) => {
@@ -18,6 +20,10 @@ handleLenght = () => {
   return (this.state.movies.length === 0) ? 'No movie here' : this.state.movies.length + " Found" 
 }
 
+handlePageChange = page => {
+console.log(page);
+}
+
 handleLike = (movie) => {
  const movies = [...this.state.movies]; //get the array
   const index =  movies.indexOf(movie); // get index from movie passed
@@ -26,10 +32,12 @@ movies[index].liked = !movies[index].liked; //toggle between like dislike
   this.setState({movies}); // change state
 }
 
-    
-   render() { 
-      return ( 
+  
 
+   render() { 
+const {length:count} = this.state.movies;
+      return ( 
+   
 <div>
 <h3>{this.handleLenght()}</h3>
 <table className="container table">
@@ -57,7 +65,7 @@ movies[index].liked = !movies[index].liked; //toggle between like dislike
          )}
    </tbody>
 </table>
-<Pagination/>
+<Pagination itemsCount={count} pageSize={this.state.pageSize} onPageChange={this.handlePageChange}/>
 </div>
        );
    }
