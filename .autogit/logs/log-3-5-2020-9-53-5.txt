@@ -1,0 +1,18 @@
+-------------------- Auto-Git Log --------------------
+		Wed Jun 03 2020 09:53:05 GMT+0100 (West Africa Standard Time)
+------------------------------------------------------
+
+Modified files:
+* src/Components/movie.jsx
+
+
+Created files:
+* .autogit/logs/log-2-5-2020-17-42-41.txt
+* src/Components/common/tableHeader.jsx
+* src/Components/moviesTable.jsx
+
+
+Deleted files:
+
+
+Renamed files:
