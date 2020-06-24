@@ -1,21 +1,22 @@
 import React,{Component} from 'react';
 import './App.css';
-// import { getMovies } from "./services/fakeMovieService";
-
+import { getMovies } from "./services/fakeMovieService";
 
 class App extends Component {
-
+ state = {
+   movies: []
+ }
+ componentDidMount(){
+ const movies = getMovies();
+  this.setState({movies});
+  }
+  
 
 constructor(){
   super();
   console.log('App - Constructor');
   // this.state = this.props.something;
 }
-
-componentDidMount(){
-console.log('App - Mounted');
-}
-
 
 
   render() { 
